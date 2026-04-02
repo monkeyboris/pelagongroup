@@ -1,17 +1,17 @@
-<!-- v3 -->
+<!-- v4 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pelagon Group</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23F5F2EC'/%3E%3Ccircle cx='50' cy='50' r='36' stroke='%234A1A6B' stroke-width='7' fill='none'/%3E%3Cline x1='14' y1='50' x2='86' y2='50' stroke='%234A1A6B' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23F5F2EC'/%3E%3Ccircle cx='50' cy='50' r='36' stroke='%234A1A6B' stroke-width='4.5' fill='none'/%3E%3Cline x1='14' y1='50' x2='86' y2='50' stroke='%234A1A6B' stroke-width='4.5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --cream: #F5F2EC;
     --ink: #2B2825;
@@ -19,9 +19,9 @@
     --ink-faint: #c8c4bc;
     --purple: #4A1A6B;
   }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--cream);
     color: var(--ink);
@@ -30,7 +30,7 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
-
+ 
   body::before {
     content: '';
     position: fixed;
@@ -40,7 +40,8 @@
     z-index: 1000;
     opacity: 0.4;
   }
-
+ 
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -50,22 +51,21 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  .nav-logo svg { height: 26px; width: auto; }
-
-  .nav-contact {
+ 
+  .nav-logo svg { height: 22px; width: auto; }
+ 
+  .nav-email-wrap {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.75rem;
-    font-weight: 400;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-light);
-    text-decoration: none;
-    opacity: 1;
+    cursor: pointer;
     transition: color 0.3s;
   }
-  .nav-contact:hover { color: var(--purple); }
-
+  .nav-email-wrap:hover { color: var(--purple); }
+ 
+  /* HERO */
   .hero {
     height: 100vh;
     display: flex;
@@ -76,28 +76,27 @@
     text-align: center;
     padding: 0 2rem;
   }
-
-  .hero-mark {
-    opacity: 1;
+ 
+  .hero-mark svg {
+    display: block;
   }
-
+ 
   .hero-rule {
     width: 1px;
     height: 56px;
     background: var(--ink-faint);
     margin: 2.8rem auto;
   }
-
+ 
   .hero-tagline {
-    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    font-size: clamp(1rem, 1.8vw, 1.22rem);
     font-weight: 300;
     font-style: italic;
     letter-spacing: 0.04em;
     color: var(--ink-light);
-    opacity: 1;
-    max-width: 420px;
+    max-width: 400px;
   }
-
+ 
   .hero-scroll {
     position: absolute;
     bottom: 2.5rem;
@@ -107,110 +106,113 @@
     flex-direction: column;
     align-items: center;
     gap: 0.6rem;
-    opacity: 1;
   }
-
+ 
   .hero-scroll span {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--ink-faint);
   }
-
+ 
   .scroll-line {
     width: 1px;
     height: 36px;
     background: linear-gradient(to bottom, var(--ink-faint), transparent);
     animation: scrollPulse 2.2s ease-in-out infinite;
   }
-
+ 
+  /* SECTIONS */
   section {
     max-width: 900px;
     margin: 0 auto;
     padding: 8rem 4rem;
   }
-
+ 
   .section-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.32em;
+    font-size: 0.6rem;
+    letter-spacing: 0.34em;
     text-transform: uppercase;
     color: var(--purple);
     margin-bottom: 3rem;
-    opacity: 1;
-    transform: translateY(0);
   }
-  .section-label.visible { opacity: 1; transform: translateY(0); }
-
+ 
+  /* ABOUT */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
     align-items: start;
   }
-
+ 
   .about-text p {
     font-size: clamp(1.05rem, 1.5vw, 1.18rem);
     color: var(--ink-light);
     margin-bottom: 1.6rem;
-    opacity: 1;
-    transform: translateY(0);
   }
-  .about-text p.visible { opacity: 1; transform: translateY(0); }
-  .about-text p:nth-child(2) { transition-delay: 0.18s; }
-
+ 
   .about-mark {
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     padding-top: 0.5rem;
-    opacity: 1;
   }
-  .about-mark svg { width: 110px; opacity: 0.1; }
-
-  .work-section {
+ 
+  .about-mark svg { width: 100px; opacity: 0.08; }
+ 
+ 
+  /* HOW */
+  .how-section {
     border-top: 1px solid var(--ink-faint);
     padding-top: 8rem;
   }
-
-  .work-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    margin-top: 2rem;
+ 
+  .how-text {
+    max-width: 560px;
   }
-
-  .work-item {
-    opacity: 1;
-    transform: translateY(0);
+ 
+  .how-text p {
+    font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+    color: var(--ink-light);
+    margin-bottom: 1.6rem;
   }
-  .work-item:nth-child(2) { transition-delay: 0.12s; }
-  .work-item:nth-child(3) { transition-delay: 0.24s; }
-
-  .work-number {
-    font-size: 0.58rem;
-    letter-spacing: 0.28em;
+ 
+  .principles {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+ 
+  .principle {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--ink-faint);
+  }
+ 
+  .principle:first-child {
+    border-top: 1px solid var(--ink-faint);
+  }
+ 
+  .principle-num {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--purple);
-    margin-bottom: 1.2rem;
-    display: block;
+    min-width: 1.5rem;
+    flex-shrink: 0;
   }
-
-  .work-title {
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.9rem;
-    line-height: 1.3;
-    color: var(--ink);
-  }
-
-  .work-desc {
-    font-size: 0.95rem;
+ 
+  .principle-text {
+    font-size: 1rem;
     color: var(--ink-light);
     font-weight: 300;
-    line-height: 1.75;
+    line-height: 1.6;
   }
-
+ 
+  /* CONTACT */
   .contact-section {
     border-top: 1px solid var(--ink-faint);
     display: grid;
@@ -219,58 +221,37 @@
     align-items: end;
     padding-bottom: 6rem;
   }
-
-  .contact-left {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+ 
   .contact-heading {
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 300;
     line-height: 1.2;
     margin-bottom: 2.5rem;
   }
+ 
   .contact-heading em { font-style: italic; color: var(--ink-light); }
-
+ 
   .contact-details { display: flex; flex-direction: column; gap: 0.35rem; }
-
-  .contact-details a {
-    font-size: 1rem;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.3s;
-    position: relative;
-    display: inline-block;
-  }
-  .contact-details a::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; left: 0;
-    width: 0; height: 1px;
-    background: var(--purple);
-    transition: width 0.4s ease;
-  }
-  .contact-details a:hover { color: var(--purple); }
-  .contact-details a:hover::after { width: 100%; }
-
+ 
+  .contact-email-canvas { cursor: pointer; display: block; }
+ 
   .contact-meta {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.12em;
     color: var(--ink-faint);
     text-transform: uppercase;
     margin-top: 0.15rem;
   }
-
+ 
   .contact-right {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    opacity: 1;
   }
-  .contact-right svg { width: 72px; opacity: 0.12; }
-
+ 
+  .contact-right svg { width: 64px; opacity: 0.1; }
+ 
+  /* FOOTER */
   footer {
     border-top: 1px solid var(--ink-faint);
     padding: 2rem 4rem;
@@ -280,67 +261,58 @@
     max-width: 900px;
     margin: 0 auto;
   }
-
+ 
   .footer-copy, .footer-est {
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-faint);
   }
-
-  @keyframes riseIn {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes growLine {
-    from { height: 0; }
-    to   { height: 56px; }
-  }
+ 
+  /* ANIMATIONS */
   @keyframes scrollPulse {
     0%, 100% { opacity: 0.25; }
     50%       { opacity: 0.7; }
   }
-
+ 
+  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 1.5rem 2rem; }
-    .nav-contact { display: none; }
+    .nav-email-wrap { display: none; }
     section { padding: 4rem 1.8rem; }
     .hero { padding: 0 1.8rem; }
-    .hero-mark { width: 60px; height: 60px; }
-    .hero-tagline { font-size: 1rem; max-width: 300px; }
+    .hero-tagline { font-size: 0.98rem; max-width: 300px; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-mark { display: none; }
-    .work-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .work-title { font-size: 1.1rem; }
     .contact-section { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 3rem; }
     .contact-right { display: none; }
-    .contact-heading { font-size: 1.8rem; }
+    .contact-heading { font-size: 1.6rem; }
     footer { padding: 1.5rem 1.8rem; flex-direction: column; gap: 0.4rem; text-align: center; }
   }
 </style>
 </head>
 <body>
-
+ 
+<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
-      <circle cx="28" cy="28" r="23" stroke="#4A1A6B" stroke-width="2.8"/>
-      <line x1="5" y1="28" x2="51" y2="28" stroke="#4A1A6B" stroke-width="2.8"/>
-      <text x="68" y="37" font-family="Cormorant Garamond, Georgia, serif" font-size="27" font-weight="400" letter-spacing="5" fill="#4A1A6B">PELAGON</text>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 46" fill="none">
+      <circle cx="23" cy="23" r="19" stroke="#4A1A6B" stroke-width="1.8" fill="none"/>
+      <line x1="4" y1="23" x2="42" y2="23" stroke="#4A1A6B" stroke-width="1.8"/>
+      <text x="56" y="30" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="400" letter-spacing="4" fill="#4A1A6B">PELAGON</text>
     </svg>
   </a>
-  <a class="nav-contact" href="/cdn-cgi/l/email-protection#caa0a5afa68abaafa6abada5a4adb8a5bfbae4a9a5a7"><span class="__cf_email__" data-cfemail="cfa5a0aaa38fbfaaa3aea8a0a1a8bda0babfe1aca0a2">[email&#160;protected]</span></a>
+  <div class="nav-email-wrap" id="nav-email-wrap">
+    <canvas id="nav-email-canvas" height="16"></canvas>
+  </div>
 </nav>
-
+ 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-mark">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="80" height="80">
-      <circle cx="50" cy="50" r="44" stroke="#4A1A6B" stroke-width="4.5"/>
-      <line x1="6" y1="50" x2="94" y2="50" stroke="#4A1A6B" stroke-width="4.5"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="72" height="72">
+      <circle cx="50" cy="50" r="44" stroke="#4A1A6B" stroke-width="2.8" fill="none"/>
+      <line x1="6" y1="50" x2="94" y2="50" stroke="#4A1A6B" stroke-width="2.8"/>
     </svg>
   </div>
   <div class="hero-rule"></div>
@@ -350,65 +322,113 @@
     <span>Scroll</span>
   </div>
 </section>
-
+ 
+<!-- THE GROUP -->
 <section>
   <div class="section-label">The Group</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>Pelagon Group is a specialised trading house connecting regulated markets across Asia and Europe. We operate where complexity is highest and relationships matter most.</p>
-      <p>We do not own product. We do not move at volume. We build corridors — precise, compliant, and built to last — between producers who need access and buyers who need certainty.</p>
+      <p>Pelagon Group is a specialist trading house. We identify commodity opportunities in regulated and emerging markets — and close deals where others cannot navigate the complexity.</p>
+      <p>We do not hold inventory. We do not require a principal licence. We operate as brokers and advisors — building the corridors, managing the compliance, and executing the transaction.</p>
     </div>
     <div class="about-mark">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="44" stroke="#4A1A6B" stroke-width="4.5"/>
-        <line x1="6" y1="50" x2="94" y2="50" stroke="#4A1A6B" stroke-width="4.5"/>
+        <circle cx="50" cy="50" r="44" stroke="#4A1A6B" stroke-width="2.8" fill="none"/>
+        <line x1="6" y1="50" x2="94" y2="50" stroke="#4A1A6B" stroke-width="2.8"/>
       </svg>
     </div>
   </div>
 </section>
-
-<section class="work-section">
-  <div class="section-label">What We Do</div>
-  <div class="work-grid">
-    <div class="work-item">
-      <span class="work-number">I</span>
-      <div class="work-title">Import &amp; Export Brokerage</div>
-      <p class="work-desc">We structure and broker transactions between certified producers and licensed importers. Full documentation management, compliance coordination, and deal execution.</p>
+ 
+ 
+ 
+<!-- HOW WE WORK -->
+<section class="how-section">
+  <div class="section-label">How We Work</div>
+  <div class="how-text">
+    <p>We are not a directory. We are not a database. We are a specialist firm that builds one corridor at a time — with precision, with the right partners, and with long-term stakes in every deal we touch.</p>
+  </div>
+  <div class="principles">
+    <div class="principle">
+      <span class="principle-num">I</span>
+      <span class="principle-text">We identify the gap before others see it — and secure the position before it is obvious.</span>
     </div>
-    <div class="work-item">
-      <span class="work-number">II</span>
-      <div class="work-title">Certification Advisory</div>
-      <p class="work-desc">We guide producers through EU-GMP certification — from gap analysis to site inspection. Long-term retainer engagements for producers serious about European market access.</p>
+    <div class="principle">
+      <span class="principle-num">II</span>
+      <span class="principle-text">We never own product. We never require a licence. Revenue comes from brokerage fees, advisory retainers, and deal commissions.</span>
     </div>
-    <div class="work-item">
-      <span class="work-number">III</span>
-      <div class="work-title">CMO Matching</div>
-      <p class="work-desc">We connect producers who lack EU-GMP processing capability with the right contract manufacturer. One introduction that unlocks the entire corridor.</p>
+    <div class="principle">
+      <span class="principle-num">III</span>
+      <span class="principle-text">Every introduction is preceded by qualification. We do not send producers to buyers who cannot receive them.</span>
+    </div>
+    <div class="principle">
+      <span class="principle-num">IV</span>
+      <span class="principle-text">We earn when deals close. Our incentives are fully aligned with the partners we bring to the table.</span>
     </div>
   </div>
 </section>
-
+ 
+<!-- CONTACT -->
 <section class="contact-section">
   <div class="contact-left">
     <div class="section-label" style="margin-bottom: 2rem;">Contact</div>
     <h2 class="contact-heading">Begin a<br><em>conversation.</em></h2>
     <div class="contact-details">
-      <a href="/cdn-cgi/l/email-protection#6b01040e072b1b0e070a0c04050c19041e1b45080406"><span class="__cf_email__" data-cfemail="7a10151f163a0a1f161b1d15141d08150f0a54191517">[email&#160;protected]</span></a>
+      <canvas id="contact-email-canvas" class="contact-email-canvas" height="24"></canvas>
       <span class="contact-meta">Joel, Founder — Pelagon Group</span>
       <span class="contact-meta" style="margin-top: 0.8rem;">Southeast Asia &amp; Europe</span>
     </div>
   </div>
   <div class="contact-right">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-      <circle cx="50" cy="50" r="44" stroke="#4A1A6B" stroke-width="4.5"/>
-      <line x1="6" y1="50" x2="94" y2="50" stroke="#4A1A6B" stroke-width="4.5"/>
+      <circle cx="50" cy="50" r="44" stroke="#4A1A6B" stroke-width="2.8" fill="none"/>
+      <line x1="6" y1="50" x2="94" y2="50" stroke="#4A1A6B" stroke-width="2.8"/>
     </svg>
   </div>
 </section>
-
+ 
+<!-- FOOTER -->
 <footer>
   <span class="footer-copy">&copy; 2026 Pelagon Group</span>
   <span class="footer-est">Est. 2026 &nbsp;&middot;&nbsp; Manila &nbsp;&middot;&nbsp; Bangkok &nbsp;&middot;&nbsp; Berlin</span>
 </footer>
+ 
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var p = [106,111,101,108,64,112,101,108,97,103,111,110,103,114,111,117,112,46,99,111,109];
+  var email = p.map(function(c){ return String.fromCharCode(c); }).join('');
+  var mailto = 'mail' + 'to:' + email;
+ 
+  function drawEmail(canvasId, fontSize, color) {
+    var c = document.getElementById(canvasId);
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var font = fontSize + 'px "Cormorant Garamond", Georgia, serif';
+    ctx.font = font;
+    var w = ctx.measureText(email).width;
+    c.width = Math.ceil(w) + 4;
+    c.style.width = (Math.ceil(w) + 4) + 'px';
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.fillText(email, 0, fontSize * 0.85);
+    c.onclick = function(){ window.location.href = mailto; };
+  }
+ 
+  drawEmail('nav-email-canvas', 11, '#4a4540');
+  drawEmail('contact-email-canvas', 15, '#2B2825');
+ 
+  var wrap = document.getElementById('nav-email-wrap');
+  if (wrap) wrap.onclick = function(){ window.location.href = mailto; };
+});
+</script>
+ 
+</body>
+</html>
+ 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+
+
+
+
+
